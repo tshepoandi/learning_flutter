@@ -2,7 +2,6 @@ import 'package:animated_splash_screen/animated_splash_screen.dart'
     show AnimatedSplashScreen, SplashTransition;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:test_app_tshepo/home.dart';
 import 'package:test_app_tshepo/splash.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -37,27 +36,19 @@ class MyApp extends StatelessWidget {
           // useMaterial3: true,
           ),
       home: AnimatedSplashScreen(
-        splash: SvgPicture.asset("assets/codingTest/quickloc8.svg"),
-        duration: 3500,
-        splashTransition: SplashTransition.scaleTransition,
-        backgroundColor: Colors.white,
-        nextScreen: const GoogleMap(
-            initialCameraPosition: CameraPosition(
-                target: LatLng(37.773972, -122.431297), zoom: 11.5)),
-      ),
+          splash: SvgPicture.asset("assets/codingTest/quickloc8.svg"),
+          duration: 3500,
+          splashTransition: SplashTransition.scaleTransition,
+          backgroundColor: Colors.white,
+          nextScreen: const MyHomePage(title: " Quicloc8")),
     );
   }
 }
 
-class MapScreen extends StatefulWidget {
-  const MapScreen({super.key});
-
-  @override
-  // ignore: no_logic_in_create_state
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
-  }
-}
+// class MapScreen extends StatefulWidget {
+//   @override
+//   // ignore: library_private_types_in_public_api
+//   _MapScreenState creat eState() => _MapScreenState();
+// }
 
 class _MapScreenState {}
