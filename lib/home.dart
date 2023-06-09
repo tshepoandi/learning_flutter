@@ -25,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
+        backgroundColor: Theme.of(context).colorScheme.background,
         title: Text(widget.title),
       ),
       body: const Center(

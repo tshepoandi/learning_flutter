@@ -15,14 +15,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: const Color.fromARGB(0, 0, 0, 0)),
-        useMaterial3: true,
-      ),
+
+          // colorScheme:
+          // ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
+          // useMaterial3: true,
+          ),
       home: AnimatedSplashScreen(
           splash: SvgPicture.asset("assets/codingTest/quickloc8.svg"),
           duration: 3500,
-          splashTransition: SplashTransition.sizeTransition,
+          splashTransition: SplashTransition.scaleTransition,
           backgroundColor: Colors.white,
           nextScreen: const MyHomePage(title: " Quicloc8")),
     );
