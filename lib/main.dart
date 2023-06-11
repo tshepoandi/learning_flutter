@@ -30,18 +30,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
-          // colorScheme:
-          // ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
-          // useMaterial3: true,
-          ),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
+        useMaterial3: true,
+      ),
       home: AnimatedSplashScreen(
           splash: SvgPicture.asset("assets/codingTest/quickloc8.svg"),
           duration: 3500,
           splashTransition: SplashTransition.scaleTransition,
           backgroundColor: Colors.white,
-          nextScreen: const MyHomePage(title: " Quicloc8")),
-    );
+          nextScreen: const MyHomePage(title: "COMPTON"),
+    ));
   }
 }
 
@@ -51,4 +50,4 @@ class MyApp extends StatelessWidget {
 //   _MapScreenState creat eState() => _MapScreenState();
 // }
 
-class _MapScreenState {}
+// class _MapScreenState {}

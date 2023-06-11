@@ -67,6 +67,8 @@ flutter:
   assets:
     - assets/codingTest/quickloc8.svg
     - assets/codingTest/Quicloc8-logo.png
+    - assets/codingTest/messages.json
+    - assets/codingTest/vehicleCoordinates.json
     - .env
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
