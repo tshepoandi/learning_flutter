@@ -1,5 +1,8 @@
+mport 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:test_app_tshepo/messages.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -16,7 +19,7 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Stack(
         children: [
           GoogleMap(
@@ -29,7 +32,12 @@ class _MapScreenState extends State<MapScreen> {
             right: 16,
             child: FloatingActionButton(
               onPressed: () {
-                // Add your button's onPressed logic here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MessagesPage(title: 'Messages'),
+                  ),
+                );
               },
               child: Icon(Icons.message),
             ),
@@ -47,10 +55,27 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: MapScreen(),
       ),
+    );
+  }
+}
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Your App Name',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(title: 'Your App Name'),
     );
   }
 }
