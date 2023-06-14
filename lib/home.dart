@@ -11,7 +11,7 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   static const _initialCameraPosition = CameraPosition(
-    target: LatLng(37.773972, -99.4312937),
+    target: LatLng(-34.0461583,18.7047383),
     zoom: 11.5,
   );
 
@@ -22,7 +22,7 @@ class _MapScreenState extends State<MapScreen> {
         children: [
           GoogleMap(
             myLocationButtonEnabled: true,
-            zoomControlsEnabled: true,
+            zoomControlsEnabled: false,
             initialCameraPosition: _initialCameraPosition,
           ),
           Positioned(
