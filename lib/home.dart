@@ -11,10 +11,23 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   static const _initialCameraPosition = CameraPosition(
-    target: LatLng(-34.0461583,18.7047383),
+    target: LatLng(-50.97328788388191, 30.57117434524753),
     zoom: 11.5,
   );
+  final Set<Marker> _markers = {};
+  @override
+  void initState() {
+    super.initState();
 
+    // _markers.add(
+    //   const Marker(
+    //     markerId: MarkerId('marker ID'),
+    //     position: LatLng(-33.9685533, 18.5662383),
+    //     icon: BitmapDescriptor.defaultMarker, // You can customize the icon here
+    //     infoWindow: InfoWindow(title: 'Your Marker Title'),
+    //   ),
+    // );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +37,11 @@ class _MapScreenState extends State<MapScreen> {
             myLocationButtonEnabled: true,
             zoomControlsEnabled: false,
             initialCameraPosition: _initialCameraPosition,
+            markers: _markers,
           ),
           Positioned(
             bottom: 16,
-            right: 16,
+            left: 16,
             child: FloatingActionButton(
               onPressed: () {
                 Navigator.push(
@@ -69,11 +83,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Your App Name',
+      title: 'Coding Test App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Your App Name'),
+      home: const MyHomePage(title: 'Quicloc8 Map'),
     );
   }
 }
